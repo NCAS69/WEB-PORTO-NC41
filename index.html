@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            transition: background-color 0.5s ease, color 0.5s ease; /* Transition untuk background dan warna teks */
+        }
+
+        /* Tema terang */
+        .light-theme {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Tema gelap */
+        .dark-theme {
+            background-color: #1a202c; /* Warna gelap */
+            color: #ffffff; /* Warna teks terang */
+        }
+
+        nav, footer {
+            transition: background-color 0.5s ease, color 0.5s ease; /* Transisi untuk navbar dan footer */
+        }
+
+        section {
+            min-height: 100vh; /* Setiap section minimal setinggi viewport */
+            transition: background-color 0.5s ease, color 0.5s ease; /* Transisi untuk section */
+        }
+
+        /* Efek untuk gambar portofolio */
+        .portfolio-img {
+            transition: transform 0.3s ease; /* Transisi saat hover */
+        }
+
+        .portfolio-img:hover {
+            transform: scale(1.05); /* Perbesar gambar saat hover */
+        }
+
+        /* Efek untuk tautan */
+        .portfolio-link {
+            transition: background-color 0.3s ease, color 0.3s ease; /* Transisi untuk tautan */
+        }
+
+        .portfolio-link:hover {
+            background-color: rgba(244, 244, 244, 0.5); /* Ubah warna latar belakang */
+            color: #000; /* Ubah warna teks */
+        }
+    </style>
+</head>
+<body class="light-theme">
+
+    <nav class="bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="logo_nc41.png" alt="Logo" class="h-8 w-8 mr-2"> <!-- Tambahkan logo di sini -->
+                    <a href="index.html" class="text-white text-2xl font-bold">NC41</a>
+                </div>
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                        <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Services</a>
+                        <a href="contact.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="ml-4 bg-gray-700 text-white p-2 rounded-md hover:bg-gray-600 focus:outline-none" title="Toggle Theme">
+                    🌙
+                </button>
+            </div>
+        </div>
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Services</a>
+                <a href="contact.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gray-900 text-white py-4">
+        <div class="max-w-7xl mx-auto px-1 text-center">
+            <div class="relative overflow-hidden">
+                <img src="kacamata.png" class="w-2/3 mx-auto h-auto object-cover rounded-md" style="clip-path: inset(0% 0% 0% 0%);">
+                <div class="absolute inset-0 bg-black opacity-50"></div>
+                <div class="relative z-10 p-6">
+                    <h2 class="text-5xl font-extrabold text-white mb-2 mt-4">Hello, I'm Rachmani Mas Sasmitha!</h2>
+                    <p class="text-lg text-gray-300 mb-6">A passionate IT Networking specialist, IT Consultant, and IT Enthusiast dedicated to shaping the future of technology.</p>
+                    <div class="space-x-4">
+                        <a href="#infrastruktur" id="view-infrastruktur" class="inline-block portfolio-link bg-blue-800 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                            View IT Infrastructure Portfolio
+                        </a>
+                        <a href="#node" id="view-node" class="inline-block portfolio-link bg-blue-800 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+                            View Node Portfolio
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="infrastruktur" class="bg-gray-800 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">IT Infrastructure Portfolio</h2>
+            <p class="text-lg mb-6">Projects I have worked on in the field of IT Infrastructure.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Example project 1 -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <img src="server.jpg" alt="Server" class="portfolio-img mb-4 rounded">
+                    <h3 class="text-xl font-semibold mb-2">Project A</h3>
+                    <p class="text-gray-300">A brief description of Project A, including technologies used and achievements gained.</p>
+                </div>
+                <!-- Example project 2 -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <img src="BIB.jpg" alt="Project B" class="portfolio-img mb-4 rounded">
+                    <h3 class="text-xl font-semibold mb-2">Project B</h3>
+                    <p class="text-gray-300">A brief description of Project B, including technologies used and achievements gained.</p>
+                </div>
+                <!-- Example project 3 -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <img src="ppa.jpg" alt="Project C" class="portfolio-img mb-4 rounded">
+                    <h3 class="text-xl font-semibold mb-2">Project C</h3>
+                    <p class="text-gray-300">A brief description of Project C, including technologies used and achievements gained.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="node" class="bg-gray-800 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-bold mb-4">Node Portfolio</h2>
+            <p class="text-lg mb-6">Projects I have worked on in the field of Node.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ternoa -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://ternoa.com/" class="portfolio-link">
+                        <img src="ternoa.jpg" alt="Ternoa" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Ternoa</h3>
+                    </a>
+                </div>
+                <!-- Stratis -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://stratisplatform.com/" class="portfolio-link">
+                        <img src="stratis.jpg" alt="Stratis" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Stratis</h3>
+                    </a>
+                </div>
+                <!-- Dusk -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://dusk.network/" class="portfolio-link">
+                        <img src="dusk.jpg" alt="Dusk" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Dusk</h3>
+                    </a>
+                </div>
+                <!-- Selfchain -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://selfchain.io/" class="portfolio-link">
+                        <img src="selfchain.png" alt="Selfchain" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Selfchain</h3>
+                    </a>
+                </div>
+                <!-- Sepolia -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://sepolia.network/" class="portfolio-link">
+                        <img src="sepolia.jpg" alt="Sepolia" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Sepolia</h3>
+                    </a>
+                </div>
+                <!-- OG-Labs -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://www.og-labs.com/" class="portfolio-link">
+                        <img src="oglabs.png" alt="OG-Labs" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">OG-Labs</h3>
+                    </a>
+                </div>
+                <!-- Warden -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://warden.network/" class="portfolio-link">
+                        <img src="warden.jpg" alt="Warden" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Warden</h3>
+                    </a>
+                </div>
+                <!-- Nubit -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://nubit.io/" class="portfolio-link">
+                        <img src="nubit.png" alt="Nubit" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Nubit</h3>
+                    </a>
+                </div>
+                <!-- Initia -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://initia.network/" class="portfolio-link">
+                        <img src="initia.jpg" alt="Initia" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Initia</h3>
+                    </a>
+                </div>
+                <!-- Voi -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://voi.network/" class="portfolio-link">
+                        <img src="voi.jpg" alt="Voi" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Voi</h3>
+                    </a>
+                </div>
+                <!-- Aligned -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://aligned.network/" class="portfolio-link">
+                        <img src="aligned.png" alt="Aligned" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Aligned</h3>
+                    </a>
+                </div>
+                <!-- Allora -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://allora.network/" class="portfolio-link">
+                        <img src="allora.jpg" alt="Allora" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Allora</h3>
+                    </a>
+                </div>
+                <!-- Rivalz -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://rivalz.ai/" class="portfolio-link">
+                        <img src="rivalz.jpg" alt="Rivalz" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Rivalz</h3>
+                    </a>
+                </div>
+                <!-- Gaianet -->
+                <div class="bg-gray-600 p-6 rounded-lg">
+                    <a href="https://gaianet.network/" class="portfolio-link">
+                        <img src="gaianet.jpg" alt="Gaianet" class="portfolio-img mb-4 rounded">
+                        <h3 class="text-xl font-semibold mb-2">Gaianet</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2024 Rachmani Mas Sasmitha. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            if (body.classList.contains('light-theme')) {
+                body.classList.replace('light-theme', 'dark-theme');
+                themeToggle.innerHTML = '🌞'; // Ubah ikon menjadi matahari
+            } else {
+                body.classList.replace('dark-theme', 'light-theme');
+                themeToggle.innerHTML = '🌙'; // Ubah ikon menjadi bulan
+            }
+
+            // Ubah warna latar belakang pada setiap section
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                if (body.classList.contains('dark-theme')) {
+                    section.classList.add('bg-gray-900'); // Ganti dengan warna gelap
+                    section.classList.remove('bg-gray-800'); // Pastikan warna terang dihapus
+                } else {
+                    section.classList.add('bg-gray-800'); // Ganti dengan warna terang
+                    section.classList.remove('bg-gray-900'); // Pastikan warna gelap dihapus
+                }
+            });
+        });
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scroll
+        const scrollLinks = document.querySelectorAll('a[href^="#"]');
+        scrollLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
